@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import Gallery from './components/Gallery'
 import SearchBar from './components/SearchBar'
+import { DataContext } from './context/DataContext'
+
 
 
 const App = () => {
@@ -17,11 +19,9 @@ const App = () => {
         const response = await fetch(API_URL + search)
         const resData = await response.json()
         if (resData.results.length > 0) {
-          console.log("results")
           setMessage("")
           return setData(resData.results)
         } else {
-          console.log("not found")
           return setMessage('Not Found.')
         }
       }
@@ -38,7 +38,10 @@ const App = () => {
     <div>
       <SearchBar handleSearch={handleSearch} />
       {message}
-      <Gallery data={data} />
+      <DataContext.Provider value={data}>
+        <Gallery />
+      </DataContext.Provider>
+
     </div>
   )
 }
