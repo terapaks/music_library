@@ -296,3 +296,6 @@ node_modules/.cache/babel-loader/f7191bb6ad250e36e406a6204f9b8f30.json
 node_modules/.cache/babel-loader/f7cfd80a75ea3bbd2d093b49511d8ba5.json
 node_modules/.cache/babel-loader/ff27b90e9166d3891aa4070facc8d52e.json
 node_modules/.cache/babel-loader/ffccf84fa769b7c022958916e103ab1b.json
+*.json
+node_modules/.cache/.eslintcache
+*.pack
